@@ -16,6 +16,7 @@ function generatePassword() {
 
   }else if(length <= 180 || length >= 8 ){
 
+    //confirm prompts to decide what should be added to password array
     var lowercaseConfirm = confirm("Press Okay if you would like Lowercase Letters in your generated password, or cancel to not include them")
     var uppercaseConfirm = confirm("Press Okay if you would like Uppercase Letters in your generated password, or cancel to not include them")
     var numberConfirm = confirm("Press Okay if you would like Numbers in your generated password, or cancel to not include them")
@@ -67,6 +68,7 @@ function generatePassword() {
     // console.log(numberConfirm)
     // console.log(specialConfirm)
 
+    //password generation loop
     if (lowercaseConfirm || uppercaseConfirm || numberConfirm || specialConfirm){
     for (var i = 0; i <= length; i++) {
       
