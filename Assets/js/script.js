@@ -11,53 +11,71 @@ const special = ["~","!","@","#","$","%","^","&","*","(",")",">","<","?","/","_"
 function generatePassword() {
   var passwordArray = [];
 
-  var length = window.prompt("Please enter the length you would like your password to be. Must be between 8 and 180 characters")
+  var length = prompt("Please enter the length you would like your password to be. Must be between 8 and 180 characters")
   if(length > 180 || length < 8){
 
   }else if(length <= 180 || length >= 8 ){
 
-    var lowercaseConfirm = window.confirm("Press Okay if you would like Lowercase Letters in your generated password, or cancel to not include them")
-    var uppercaseConfirm = window.confirm("Press Okay if you would like Uppercase Letters in your generated password, or cancel to not include them")
-    var numberConfirm = window.confirm("Press Okay if you would like Numbers in your generated password, or cancel to not include them")
-    var specialConfirm = window.confirm("Press Okay if you would like Special Characters in your generated password, or cancel to not include them")
+    var lowercaseConfirm = confirm("Press Okay if you would like Lowercase Letters in your generated password, or cancel to not include them")
+    var uppercaseConfirm = confirm("Press Okay if you would like Uppercase Letters in your generated password, or cancel to not include them")
+    var numberConfirm = confirm("Press Okay if you would like Numbers in your generated password, or cancel to not include them")
+    var specialConfirm = confirm("Press Okay if you would like Special Characters in your generated password, or cancel to not include them")
     var password = ""
 
-    //adds array to main password array based on previous window.confirms
-    if(lowercaseConfirm = true){
+    // adds array to main password array based on previous window.confirms
+    // if none of the 
+    if(lowercaseConfirm){
       passwordArray = passwordArray.concat(alphabet);
     }
-    if(uppercaseConfirm = true){
+    if(uppercaseConfirm){
       passwordArray = passwordArray.concat(upperAlphabet);
     }
-    if(numberConfirm = true){
+    if(numberConfirm){
       passwordArray = passwordArray.concat(numbers);
     }
-    if(specialConfirm = true){
+    if(specialConfirm){
       passwordArray = passwordArray.concat(special);
     }
-
-    //attempted use with switch cases
-    //switch(lowercaseConfirm,uppercaseConfirm,numberConfirm,specialConfirm){
-      //case lowercaseConfirm(true):
-        //passwordArray = concat(alphabet);
-        //break;
-     // case uppercaseConfirm(true):
-       //passwordArray = concat(upperAlphabet);
-        //break;
-      //case numberConfirm(true):
-        //passwordArray = concat(numbers);
-      //case specialConfirm(true):
-        //passwordArray = concat(special);
-      //case lowercaseConfirm(false), uppercaseConfirm(false), numberConfirm(false), specialConfirm(false):
-
-    };
-    for (var i = 0; i <= length; i++) {
-      password += passwordArray[Math.floor(Math.random() * passwordArray.length + 1)]
-      console.log(password)
+    if(!specialConfirm && !numberConfirm && !uppercaseConfirm && !lowercaseConfirm){
+      alert("To generate a password, please select at least one option for password contents.");
     }
+
+    // attempt at switch statements
+    // switch(true){
+    //   case lowercaseConfirm:
+    //     passwordArray = passwordArray.concat(alphabet);
+    //     console.log(lowercaseConfirm)
+    //     break;
+    //   case uppercaseConfirm:
+    //    passwordArray = passwordArray.concat(upperAlphabet);
+    //    console.log(uppercaseConfirm)
+    //    break;
+    //   case numberConfirm:
+    //     passwordArray = passwordArray.concat(numbers);
+    //     console.log(numberConfirm)
+    //     break;
+    //   case specialConfirm:
+    //     passwordArray = passwordArray.concat(special);
+    //     console.log(specialConfirm)
+    //     break;
+    //   default:
+    //   alert("To generate a password, please select at least one option for password contents.")
+    //   break;
+    // };
+    // console.log(uppercaseConfirm)
+    // console.log(lowercaseConfirm)
+    // console.log(numberConfirm)
+    // console.log(specialConfirm)
+
+    if (lowercaseConfirm || uppercaseConfirm || numberConfirm || specialConfirm){
+    for (var i = 0; i <= length; i++) {
+      
+      password += passwordArray[Math.floor(Math.random() * passwordArray.length)]
+    }
+  }
     return password;
   }
-
+}
   
   
 
@@ -68,7 +86,6 @@ function writePassword() {
   var password = generatePassword();
 
   var passwordText = document.getElementById("password");
-
   passwordText.value = password;
 }
 
