@@ -14,5 +14,5 @@ The password is then generated based on the array made by the selected arrays st
 - ![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 ## Preview of site
-
+Click [here](https://tristristy.github.io/C3-PasswordGenerator/) to try out the site.
 ![Website Preview](./Assets/site-screenshot.png)
