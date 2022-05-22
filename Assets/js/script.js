@@ -12,9 +12,9 @@ function generatePassword() {
   var passwordArray = [];
 
   var length = prompt("Please enter the length you would like your password to be. Must be between 8 and 180 characters")
-  if(length > 180 || length < 8){
+  if(length > 128 || length < 8){
 
-  }else if(length <= 180 || length >= 8 ){
+  }else if(length <= 128 || length >= 8 ){
 
     //confirm prompts to decide what should be added to password array
     var lowercaseConfirm = confirm("Press Okay if you would like Lowercase Letters in your generated password, or cancel to not include them")
